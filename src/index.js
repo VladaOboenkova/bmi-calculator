@@ -16,7 +16,18 @@ app.get("/", function (request, response) {
 
 app.post("/", parser, function(request, response) {
     if (!request.body) return response.sendStatus(400);
-    response.send(`${countBMI(request.body.weight, request.body.height)}`);
+    response.send(`<!DOCTYPE html>
+                          <html lang="ru">
+                          <head>
+                              <title>Калькулятор ИМТ</title>
+                              <meta charset="utf-8" />
+                          </head>
+                          <body style="background-color: #EAE5FF;">
+                              <div style="margin-top: 150px; text-align: center; font-size: 24px">
+                                   Ваш ИМТ: ${countBMI(request.body.weight, request.body.height)}
+                              </div>
+                          </body>
+                          </html>`);
 });
 
 const server = app.listen(3000, ()=>console.log("Сервер запущен..."));
