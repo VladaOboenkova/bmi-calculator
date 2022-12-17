@@ -1,19 +1,23 @@
-<!DOCUMENT html>
+<!DOCTYPE html>
   <html lang="ru">
     <head>
        <title>Калькулятор ИМТ</title>
        <meta charset="utf-8">
        <link rel="stylesheet" href="style.css">
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     </head>
     <body>
       <div class="form-wrapper">
         <form name="input-data" method="post">
             <h2>Калькулятор ИМТ</h2>
-            <label>Вес (кг):  <input type="text" name="weight" id="weight"></label>
-            <label>Рост (см): <input type="text" name="height" id="height"></label>
+            <label>Вес (кг):  <input type="number" name="weight" id="weight" required
+                                     min="1" max="1000000" autocomplete="off" step="0.1"></label>
+            <label>Рост (см): <input type="number" name="height" id="height" required
+                                     min="1" max="1000000" autocomplete="off" step="0.1"></label>
             <input type="submit" id="submit-button" value="Рассчитать">
             <input type="reset" id="reset-button" value="Очистить">
         </form>
       </div>
+      <script src="input-pattern.js"></script>
     </body>
   </html>
