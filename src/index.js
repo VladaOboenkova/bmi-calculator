@@ -34,6 +34,14 @@ function checkData(request, response){
     return true;
 }
 
+function countWeightForBMINorm(height){
+    const normBMI = [18.5, 25];
+    const normalWeight = [];
+    normalWeight[0] = ((height/100) * (height/100) * normBMI[0]).toFixed(1);
+    normalWeight[1] = ((height/100) * (height/100) * normBMI[1]).toFixed(1);
+    return `Диапазон нормального веса: ${normalWeight[0]} - ${normalWeight[1]} кг`
+}
+
 app.get("/", function (request, response) {
     response.sendFile(__dirname + "/page-files/index.html");
 });
@@ -49,7 +57,8 @@ app.post("/", parser, function(request, response) {
                           </head>
                           <body style="background-color: #EAE5FF;">
                               <div style="margin-top: 150px; text-align: center; font-size: 24px">
-                                   Ваш ИМТ: ${countBMI(request.body.weight, request.body.height)}
+                                   Ваш ИМТ: ${countBMI(request.body.weight, request.body.height)}<br><br>
+                                   ${countWeightForBMINorm(request.body.height)}
                               </div>
                           </body>
                           </html>`);
