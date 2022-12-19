@@ -42,6 +42,17 @@ function countWeightForBMINorm(height){
     return `Диапазон нормального веса: ${normalWeight[0]} - ${normalWeight[1]} кг`
 }
 
+function defineBMIZone(weight, height){
+    const bmi = countBMI(weight, height);
+    if (bmi <= 16) { return ["Выраженный дефицит массы тела", "dodgerblue"]}
+    else if (bmi > 16 && bmi <= 18.5) { return ["Недостаточная (дефицит) масса тела", "deepskyblue"]}
+    else if (bmi > 18.5 && bmi <= 25) {return ["Норма", "limegreen"]}
+    else if (bmi > 25 && bmi <= 30) {return ["Избыточная масса тела (предожирение)", "yellowgreen"]}
+    else if (bmi > 30 && bmi <= 35) {return ["Ожирение 1 степени", "#E3E308"]}
+    else if (bmi > 35 && bmi <= 40) {return ["Ожирение 2 степени", "orange"]}
+    else if (bmi > 40) {return ["Ожирение 3 степени", "crimson"]}
+}
+
 app.get("/", function (request, response) {
     response.sendFile(__dirname + "/page-files/index.html");
 });
@@ -58,6 +69,9 @@ app.post("/", parser, function(request, response) {
                           <body style="background-color: #EAE5FF;">
                               <div style="margin-top: 150px; text-align: center; font-size: 24px">
                                    Ваш ИМТ: ${countBMI(request.body.weight, request.body.height)}<br><br>
+                                   <span style="color:${defineBMIZone(request.body.weight, request.body.height)[1]};">
+                                        ${defineBMIZone(request.body.weight, request.body.height)[0]}
+                                   </span><br><br>
                                    ${countWeightForBMINorm(request.body.height)}
                               </div>
                           </body>
