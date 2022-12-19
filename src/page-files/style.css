@@ -58,7 +58,18 @@ td{
     background-color: dodgerblue;
 }
 
-
+#info-page-link{
+    display: block;
+    float: right;
+    margin: 10px;
+    padding: 5px 10px;
+    text-decoration: none;
+    border: 2px solid #8F7FE0;
+    border-radius: 15px;
+    background-color: white;
+    font-weight: bold;
+    color: black;
+}
 
 .form-wrapper{
     display: flex;
