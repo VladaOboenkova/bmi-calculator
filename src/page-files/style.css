@@ -3,10 +3,75 @@ body{
     margin: 0;
     padding: 0;
     height: 100%;
+    background-color: #EAE5FF;
+    overflow: hidden;
+}
+
+h1{
+    text-align: center;
+}
+
+p{
+    padding: 0 20px;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+table{
+    padding: 0 20px;
+    font-size: 18px;
+    margin: 0 auto;
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+th,
+td{
+    border: 2px solid black;
+    padding: 0 5px;
+}
+#red{
+    background-color: crimson;
+}
+
+#orange{
+    background-color: orange;
+}
+
+#yellow{
+    background-color: yellow;
+}
+
+#light-green{
+    background-color: yellowgreen;
+}
+
+#green{
+    background-color: limegreen;
+}
+
+#light-blue{
+    background-color: deepskyblue;
+}
+
+#blue{
+    background-color: dodgerblue;
+}
+
+#info-page-link{
+    display: block;
+    float: right;
+    margin: 10px;
+    padding: 5px 10px;
+    text-decoration: none;
+    border: 2px solid #8F7FE0;
+    border-radius: 15px;
+    background-color: white;
+    font-weight: bold;
+    color: black;
 }
 
 .form-wrapper{
-    background-color: #EAE5FF;
     display: flex;
     justify-content: center;
     align-items: center;
