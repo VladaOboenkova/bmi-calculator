@@ -4,7 +4,8 @@
   "description": "Сервис, позволяющий рассчитать ИМТ (индекс массы тела) человека",
   "main": "index.js",
   "scripts": {
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "test": "jest"
   },
   "author": "Oboenkova Vlada",
   "license": "MIT",
