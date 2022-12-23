@@ -1,3 +1,7 @@
+main: [![tests](https://github.com/VladaOboenkova/bmi-calculator/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/VladaOboenkova/bmi-calculator/actions/workflows/tests.yml)
+
+develop: [![tests](https://github.com/VladaOboenkova/bmi-calculator/actions/workflows/tests.yml/badge.svg?branch=develop)](https://github.com/VladaOboenkova/bmi-calculator/actions/workflows/tests.yml)
+
 # Калькулятор ИМТ
 Сервис, позволяющий рассчитать ИМТ (индекс массы тела) человека. 
 
@@ -20,4 +24,8 @@
 Запустите Docker образ:
 
     docker run -p 49160:3000 -d bmi-calculator-image
+
+В браузере ввести
+
+    localhost:49160
 
