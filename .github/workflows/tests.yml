@@ -14,15 +14,13 @@ jobs:
       matrix:
         os: [windows-latest, ubuntu-latest, macos-latest]
     runs-on: ${{ matrix.os }}
-
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '16.x'
-      -name: Install dependencies
-       run: npm ci
-
+      - name: Install dependencies
+        run: npm ci
       - name: Run tests
         run: npm test
